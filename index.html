@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Test Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Test Script</h1>
+    <p>This page is designed to test basic HTML, CSS, and JavaScript functionality.</p>
+
+    <h2>Button Test</h2>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+
+    <h2>Input Field Test</h2>
+    <input type="text" id="testInput" placeholder="Type something here">
+    <button onclick="showInput()">Show Input</button>
+    <div class="output" id="output"></div>
+
+    <h2>Form Test</h2>
+    <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="output" id="formOutput"></div>
+
+    <h2>Link Test</h2>
+    <a href="https://www.example.com" target="_blank">Visit Example.com</a>
+
+    <script>
+        function showInput() {
+            const input = document.getElementById('testInput').value;
+            document.getElementById('output').textContent = `You entered: ${input}`;
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('formOutput').textContent = `Form Submitted! Name: ${name}, Email: ${email}`;
+        }
+    </script>
+</body>
+</html>
